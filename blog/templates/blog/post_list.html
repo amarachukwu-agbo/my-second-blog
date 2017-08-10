@@ -6,15 +6,13 @@
 	<div>												
 		<h1><a	href="">Django	Girls	Blog</a></h1>								
 	</div>
-	<div>												
-		<p>published:	14.06.2014,	12:14</p>												
-		<h2><a	href="">My	first	post</a></h2>												
-		<p>Django Girls Aba is happening on the 18th and 19th of August 2017 at Kingdom Kings Praise Ministries #7 Factory Road Aba. Participants would learn how to code Python and Django. Bugs Coma and go, skills stay forever.</p>								
-	</div>
-	<div>												
-		<p>published:	14.06.2014,	12:14</p>												
-		<h2><a	href="">My	second	post</a></h2>												
-		<p>Hola People!!! I am excited to tell you that I am officially an Andela fellow YAY!!! :) :). Coding has just begun</p>		
-	</div>				
+	
+	{% for post in posts %}	
+		<div>
+		<p>Published: {{post.published_date}} </p>										
+		<h1><a href="">{{post.title}} </a></h1>
+		<p>{{post.text|linebreaksbr}} </p>
+		</div>	
+	{% endfor %}									
 </body> 
 </html>
